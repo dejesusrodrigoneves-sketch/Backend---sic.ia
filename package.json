@@ -1,0 +1,48 @@
+{
+  "name": "salgadoscosta-backend",
+  "version": "2.0.0",
+  "description": "Backend API REST - Fábrica de Salgados Costa",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "npx prisma generate --schema=prisma/schema.prisma",
+    "vercel-build": "npx prisma generate --schema=prisma/schema.prisma && npx prisma db push --schema=prisma/schema.prisma --accept-data-loss",
+    "dev": "nodemon server.js",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:seed": "node scripts/seed.js",
+    "export": "node scripts/exportFirestore.js",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "@supabase/supabase-js": "^2.110.1",
+    "axios": "^1.17.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^7.5.0",
+    "firebase-admin": "^14.3.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.2.0",
+    "node-cron": "^4.6.0",
+    "pg": "^8.22.0",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prisma": "~6.5.0",
+    "supertest": "^7.2.2",
+    "vitest": "^2.0.0"
+  }
+}

@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Build / Vercel
+.vercel/
+dist/
+build/
+
+# Junk
+nul
+*.log
+npm-debug.log*
+
+# Tests (não versionar no repo de deploy)
+tests/
+coverage/
